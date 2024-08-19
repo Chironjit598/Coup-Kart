@@ -145,7 +145,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               CustomButton(
                   title: "Login",
-                  onpressed: () => Get.toNamed(Routes.forgetScreen)),
+                  onpressed: () => Get.toNamed(Routes.bottoNavBar)),
               SizedBox(
                 height: 25.h,
               ),
