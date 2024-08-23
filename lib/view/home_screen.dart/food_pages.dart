@@ -5,20 +5,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class FavouritesScreen extends StatelessWidget {
-  const FavouritesScreen({super.key});
+class FoodPages extends StatelessWidget {
+  const FoodPages({super.key});
 
   @override
   Widget build(BuildContext context) {
-       return Scaffold(
+
+    
+     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         centerTitle: true,
-        automaticallyImplyLeading: false,
-
-    
-        title: const Text("Favourites Deals"),
+        leading: IconButton(
+            onPressed: () => Get.back(),
+            icon: Icon(Icons.keyboard_arrow_left, size: 30.sp)),
+        title: const Text("Food"),
       ),
 
       body: Padding(
@@ -33,7 +35,7 @@ class FavouritesScreen extends StatelessWidget {
             
           ), 
           itemBuilder:(context, index){
-                        return customProductCategory("20% Off Any 1/2 Jerk Meal With a Drink", "Pepper Grill & Bar", AppImages.product2, "Save \$2", (){
+                        return customProductCategory("20% Off Any 1/2 Jerk Meal With a Drink", "Pepper Grill & Bar", AppImages.product1, "Save \$2", (){
                            Get.toNamed(Routes.dettailsPage,
                           arguments: {
                             "img":AppImages.product2,
@@ -52,6 +54,5 @@ class FavouritesScreen extends StatelessWidget {
       
     );
  
-
   }
 }

@@ -23,16 +23,12 @@ Widget customTextField(
         fontWeight: FontWeight.w400,
       ),
       obscureText: obscureText,
-      
       textInputAction: TextInputAction.next,
       validator: validator,
       decoration: InputDecoration(
-        
         prefixIcon: Padding(
           padding: EdgeInsets.only(
             left: 5.w,
-            
-           
             right: 10.w,
           ),
           child: Icon(
@@ -41,20 +37,19 @@ Widget customTextField(
             size: 28.sp,
           ),
         ),
-
         suffixIcon: Padding(
-          padding:  EdgeInsets.only(
-             left: 5.w,
+          padding: EdgeInsets.only(
+            left: 5.w,
             top: 5.h,
             bottom: 5.h,
             right: 10.w,
           ),
-          child: Icon(suffixIcon,
-          color: AppColors.primaryClr,
-          size: 28.sp,
+          child: Icon(
+            suffixIcon,
+            color: AppColors.primaryClr,
+            size: 28.sp,
           ),
         ),
-        
         enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20.r),
             borderSide: const BorderSide(color: AppColors.primaryClr)),
@@ -62,8 +57,6 @@ Widget customTextField(
           borderSide: const BorderSide(color: AppColors.primaryClr),
           borderRadius: BorderRadius.circular(20.r),
         ),
-        
-  
         filled: true,
         hintText: hinttext,
         hintStyle: TextStyle(

@@ -40,6 +40,7 @@ dependencies:
   carousel_slider: ^4.2.1
   smooth_page_indicator: ^1.2.0+3
   floating_bottom_navigation_bar: ^1.5.2
+  google_maps_flutter: ^2.9.0
 
 dev_dependencies:
   flutter_test:

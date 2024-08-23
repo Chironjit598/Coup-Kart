@@ -3,6 +3,12 @@ import 'package:coup/view/auth/login.dart';
 import 'package:coup/view/auth/otp.dart';
 import 'package:coup/view/auth/reset_password_screen.dart';
 import 'package:coup/view/auth/sign_up.dart';
+import 'package:coup/view/home_screen.dart/activity.dart';
+import 'package:coup/view/home_screen.dart/dettails_page.dart';
+import 'package:coup/view/home_screen.dart/events.dart';
+import 'package:coup/view/home_screen.dart/food_pages.dart';
+import 'package:coup/view/home_screen.dart/night_life.dart';
+import 'package:coup/view/home_screen.dart/popular_deals.dart';
 import 'package:coup/view/profile_info_pages/information_edit.dart';
 import 'package:coup/view/profile_info_pages/profile_information.dart';
 import 'package:coup/view/screens/bottom_nav_bar.dart';
@@ -24,8 +30,13 @@ class Routes {
   static const String profileInfo = "/profile-info-screen";
   static const String infoEditPage = "/info-edit-screen";
   static const String settingPage = "/setting-page-screen";
-    static const String changePass = "/change-pass-screen";
-
+  static const String changePass = "/change-pass-screen";
+  static const String popularDeals = "/popular-deals-screen";
+  static const String foodPage = "/food-page";
+  static const String nightLife = "/night-life-screen";
+  static const String activityS = "/activity-screen";
+  static const String events = "/events-screen";
+  static const String dettailsPage = "/dettails-page-screen";
 }
 
 List<GetPage> pages = [
@@ -40,6 +51,11 @@ List<GetPage> pages = [
   GetPage(name: Routes.profileInfo, page: () => ProfileInformationPage()),
   GetPage(name: Routes.infoEditPage, page: () => InformationEditPage()),
   GetPage(name: Routes.settingPage, page: () => SettingsPage()),
-    GetPage(name: Routes.changePass, page: () => ChangePassScreen()),
-
+  GetPage(name: Routes.changePass, page: () => ChangePassScreen()),
+  GetPage(name: Routes.popularDeals, page: () => PopularDealPage()),
+  GetPage(name: Routes.foodPage, page: () => FoodPages()),
+  GetPage(name: Routes.nightLife, page: () => NightLifePages()),
+  GetPage(name: Routes.events, page: () => EventsPages()),
+  GetPage(name: Routes.activityS, page: () => ActivityPages()),
+  GetPage(name: Routes.dettailsPage, page: () => DettailsPage()),
 ];

@@ -15,9 +15,7 @@ class CupCart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarColor: AppColors.primaryClr,
-    ));
+    
     return ScreenUtilInit(
       designSize: const Size(393, 852),
       minTextAdapt: true,

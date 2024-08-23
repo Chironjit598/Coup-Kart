@@ -1,8 +1,7 @@
 import 'package:coup/routes/routes.dart';
 import 'package:coup/utils/colors.dart';
 import 'package:coup/view/base/custom_list_tile.dart';
-import 'package:coup/view/profile_info_pages/profile_information.dart';
-import 'package:coup/view/settings_pages/settings.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
