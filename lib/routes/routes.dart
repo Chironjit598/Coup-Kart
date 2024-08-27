@@ -11,6 +11,7 @@ import 'package:coup/view/home_screen.dart/night_life.dart';
 import 'package:coup/view/home_screen.dart/popular_deals.dart';
 import 'package:coup/view/profile_info_pages/information_edit.dart';
 import 'package:coup/view/profile_info_pages/profile_information.dart';
+import 'package:coup/view/profile_info_pages/subscription_pages.dart';
 import 'package:coup/view/screens/bottom_nav_bar.dart';
 import 'package:coup/view/screens/onbording_screen.dart';
 import 'package:coup/view/screens/splash.dart';
@@ -36,7 +37,9 @@ class Routes {
   static const String nightLife = "/night-life-screen";
   static const String activityS = "/activity-screen";
   static const String events = "/events-screen";
-  static const String dettailsPage = "/dettails-page-screen";
+  static const String dettailsPage = "/dettails-screen";
+    static const String subscription = "/subscription-screen";
+
 }
 
 List<GetPage> pages = [
@@ -58,4 +61,6 @@ List<GetPage> pages = [
   GetPage(name: Routes.events, page: () => EventsPages()),
   GetPage(name: Routes.activityS, page: () => ActivityPages()),
   GetPage(name: Routes.dettailsPage, page: () => DettailsPage()),
+    GetPage(name: Routes.subscription, page: () => SubscriptionPage()),
+
 ];

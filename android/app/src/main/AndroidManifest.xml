@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
    
     <application
         android:label="coup"
@@ -7,8 +9,8 @@
         android:icon="@mipmap/ic_launcher">
 
 
-        <meta-data android:name="com.google.android.geo.API_KEY"
-               android:value="AIzaSyD3v24syIn4dBCPfNlG9o-2_23udWyeTVM"/>
+    <meta-data android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyBYxmzGcLJWZRKmj3akPp96v9OhQK8QmuA"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -62,6 +62,7 @@ class ProfileScreen extends StatelessWidget {
                   traIcon: Icons.keyboard_arrow_right,
                   ontap: () => Get.toNamed(Routes.profileInfo)),
               CustomListTile(
+                ontap:()=> Get.toNamed(Routes.subscription),
                   leIcon: Icons.star,
                   title: "Subscription",
                   bgColor: Colors.grey.shade300,

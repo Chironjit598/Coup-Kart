@@ -1,11 +1,11 @@
 import 'package:coup/controllers/dettails_page_button_controller.dart';
 import 'package:coup/utils/colors.dart';
-import 'package:coup/utils/images.dart';
 import 'package:coup/view/base/dettails_page_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+// ignore: must_be_immutable
 class DettailsPage extends StatelessWidget {
   DettailsPage({
     super.key,
