@@ -1,6 +1,7 @@
 import 'package:coup/routes/routes.dart';
 import 'package:coup/utils/colors.dart';
 import 'package:coup/view/base/custom_list_tile.dart';
+import 'package:coup/view/base/custom_status_bar.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,6 +12,9 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    customStatusBar(
+    statusBarClr: Colors.white, 
+    brightness: Brightness.dark);
     return Scaffold(
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,

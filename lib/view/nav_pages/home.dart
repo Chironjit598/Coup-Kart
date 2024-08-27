@@ -1,6 +1,7 @@
 import 'package:coup/routes/routes.dart';
 import 'package:coup/utils/colors.dart';
 import 'package:coup/utils/images.dart';
+import 'package:coup/view/base/custom_status_bar.dart';
 import 'package:coup/view/base/product_category_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -14,9 +15,9 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarColor: Colors.white,
-    ));
+   customStatusBar(
+    statusBarClr: Colors.white, 
+    brightness: Brightness.dark);
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,

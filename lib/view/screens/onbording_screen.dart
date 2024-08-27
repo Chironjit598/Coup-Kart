@@ -3,8 +3,10 @@ import 'package:coup/controllers/onbordind_controller.dart';
 import 'package:coup/routes/routes.dart';
 import 'package:coup/utils/colors.dart';
 import 'package:coup/view/base/custom_button.dart';
+import 'package:coup/view/base/custom_status_bar.dart';
 import 'package:coup/view/base/onbording_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -18,7 +20,12 @@ class OnbordingScreens extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+   customStatusBar(
+    statusBarClr: AppColors.whiteClr, 
+    brightness: Brightness.dark);
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           CarouselSlider(

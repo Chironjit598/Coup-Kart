@@ -3,6 +3,7 @@ import 'package:coup/routes/routes.dart';
 import 'package:coup/utils/colors.dart';
 import 'package:coup/utils/images.dart';
 import 'package:coup/view/base/custom_button.dart';
+import 'package:coup/view/base/custom_status_bar.dart';
 import 'package:coup/view/base/custom_text_field.dart';
 import 'package:coup/view/base/custom_title.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,9 @@ class _SignUpPageState extends State<SignUpPage> {
   CheckBoxController controller=Get.put(CheckBoxController());
   @override
   Widget build(BuildContext context) {
+      customStatusBar(
+      statusBarClr: AppColors.primaryClr, 
+      brightness: Brightness.dark);
     return Scaffold(
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,

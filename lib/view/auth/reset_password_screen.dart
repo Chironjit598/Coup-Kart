@@ -1,5 +1,6 @@
 import 'package:coup/utils/colors.dart';
 import 'package:coup/utils/images.dart';
+import 'package:coup/view/base/custom_status_bar.dart';
 import 'package:coup/view/base/custom_text_field.dart';
 import 'package:coup/view/base/custom_title.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,9 @@ class ResetPasswordPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+      customStatusBar(
+      statusBarClr: AppColors.primaryClr, 
+      brightness: Brightness.dark);
     return Scaffold(
 
       
