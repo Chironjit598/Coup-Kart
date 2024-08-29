@@ -1,4 +1,4 @@
-import 'package:coup/controllers/check_box_controller.dart';
+import 'package:coup/controllers/sign_up_page_controller.dart';
 import 'package:coup/routes/routes.dart';
 import 'package:coup/utils/colors.dart';
 import 'package:coup/utils/images.dart';
@@ -17,8 +17,10 @@ class SignUpPage extends StatefulWidget {
   State<SignUpPage> createState() => _SignUpPageState();
 }
 
+
 class _SignUpPageState extends State<SignUpPage> {
-  CheckBoxController controller=Get.put(CheckBoxController());
+
+  SignUpPageController signUpPageController=Get.put(SignUpPageController());
   @override
   Widget build(BuildContext context) {
       customStatusBar(
@@ -82,6 +84,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     child: CustomTitle("Your Name"),
                   ),
                   customTextField(
+                    signUpPageController.userNameController,
                
                       TextInputType.text, context, "Enter your name", (val) {
                     if (val.isEmpty) {
@@ -93,6 +96,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     child: CustomTitle("Enter E-Mail"),
                   ),
                   customTextField(
+                    signUpPageController.emailController,
                       TextInputType.text, context, "Enter E-Mail", (val) {
                     if (val.isEmpty) {
                       return "this feild can't empty";
@@ -105,24 +109,29 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                     child: CustomTitle("Confirm Password"),
                   ),
-                  customTextField(
+
+
+                 Obx(()=> customTextField(
+                    signUpPageController.passController,
                       TextInputType.text, context, "Enter your Password", (val) {
                     if (val.isEmpty) {
                       return "this feild can't empty";
                     }
                   }, prefixIcon: Icons.key,
-                  suffixIcon: Icons.remove_red_eye_outlined,
+                  suffixIcon: signUpPageController.obscureText.value?Icons.visibility_off:Icons.visibility,
+                  suffixIconOntap: ()=>signUpPageController.togglePasswordVisibility(),
+                  obscureText: signUpPageController.obscureText.value,
                   ),
-               
+               ),
                
                     
                     Row(
                       children: [
                         Obx(() => Checkbox(
                             activeColor: AppColors.primaryClr,
-                            value: controller.isChecked.value,
+                            value: signUpPageController.isChecked.value,
                             onChanged: (val) =>
-                                controller.toggleCheckBox(val!))),
+                                signUpPageController.toggleCheckBox(val!))),
                         Text(
                           "Agree with",
                           style: TextStyle(

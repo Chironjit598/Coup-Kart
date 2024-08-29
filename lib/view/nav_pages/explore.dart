@@ -1,9 +1,11 @@
+import 'package:coup/controllers/explore_page_controller.dart';
 import 'package:coup/utils/colors.dart';
 import 'package:coup/view/base/custom_status_bar.dart';
 import 'package:coup/view/base/custom_text_field.dart';
 import 'package:coup/view/base/explore_custom_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class ExploreScreen extends StatefulWidget {
@@ -14,14 +16,9 @@ class ExploreScreen extends StatefulWidget {
 }
 
 class _ExploreScreenState extends State<ExploreScreen> {
-  late GoogleMapController mapController;
 
-  final LatLng _center =
-      const LatLng(23.8103, 90.4125); // Example: Dhaka, Bangladesh
-
-  void _onMapCreated(GoogleMapController controller) {
-    mapController = controller;
-  }
+  ExplorePageController explorePageController=Get.put(ExplorePageController());
+  
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +42,9 @@ class _ExploreScreenState extends State<ExploreScreen> {
             ),
             Padding(
               padding:  EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-              child: customTextField(TextInputType.text, context, "Search For Places",
+              child: customTextField(
+                explorePageController.searchController,
+                TextInputType.text, context, "Search For Places",
                   (val) {
                 if (val.isEmpty) {
                   return 'this field can\'t be empty';
@@ -59,9 +58,9 @@ class _ExploreScreenState extends State<ExploreScreen> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20.r),
                 child: GoogleMap(
-                  onMapCreated: _onMapCreated,
+                  onMapCreated: explorePageController.onMapCreated,
                   initialCameraPosition: CameraPosition(
-                    target: _center,
+                    target: explorePageController.center,
                     zoom: 11.0,
                   ),
                 ),
