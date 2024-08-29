@@ -1,4 +1,4 @@
-import 'package:coup/controllers/check_box_controller.dart';
+import 'package:coup/controllers/login_controller.dart';
 import 'package:coup/routes/routes.dart';
 import 'package:coup/utils/colors.dart';
 import 'package:coup/utils/images.dart';
@@ -6,7 +6,6 @@ import 'package:coup/view/base/custom_button.dart';
 import 'package:coup/view/base/custom_status_bar.dart';
 import 'package:coup/view/base/custom_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
@@ -19,7 +18,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
-  CheckBoxController controller = Get.put(CheckBoxController());
+  LoginController loginController=Get.put(LoginController());
 
   @override
   Widget build(BuildContext context) {
@@ -79,6 +78,8 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(
                   children: [
                     customTextField(
+                      loginController.loginEmailController,
+                    
                       TextInputType.emailAddress,
                       context,
                       "Enter E-Mail",
@@ -96,7 +97,9 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       height: 12.h,
                     ),
-                    customTextField(
+
+                    Obx(()=>   customTextField(
+                      loginController.loginPassController,
                       TextInputType.text,
                       context,
                       "Enter Password",
@@ -106,10 +109,14 @@ class _LoginPageState extends State<LoginPage> {
                         }
                       },
                       prefixIcon: Icons.key_rounded,
-                      suffixIcon: Icons.remove_red_eye_outlined,
-                      obscureText: true,
+                      suffixIcon: loginController.obscureText.value?Icons.visibility_off:Icons.visibility,
+                      suffixIconOntap:()=> loginController.togglePasswordVisibility(),
+                      obscureText: loginController.obscureText.value,
                     ),
-                   
+                  ),
+
+
+                  
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -117,9 +124,9 @@ class _LoginPageState extends State<LoginPage> {
                           children: [
                             Obx(() => Checkbox(
                                 activeColor: AppColors.primaryClr,
-                                value: controller.isChecked.value,
+                                value: loginController.isChecked.value,
                                 onChanged: (val) =>
-                                    controller.toggleCheckBox(val!))),
+                                    loginController.toggleCheckBox(val!))),
                             Text(
                               "Remember Me",
                               style: TextStyle(

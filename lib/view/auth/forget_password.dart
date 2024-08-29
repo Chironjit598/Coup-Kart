@@ -1,3 +1,4 @@
+import 'package:coup/controllers/forget_pass_controller.dart';
 import 'package:coup/routes/routes.dart';
 import 'package:coup/utils/colors.dart';
 import 'package:coup/utils/images.dart';
@@ -9,7 +10,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class ForgetPasswordPage extends StatelessWidget {
-  const ForgetPasswordPage({super.key});
+   ForgetPasswordPage({super.key});
+
+  ForgetPassController forgetPassController=Get.put(ForgetPassController());
 
   @override
   Widget build(BuildContext context) {
@@ -70,6 +73,7 @@ class ForgetPasswordPage extends StatelessWidget {
                       padding:  EdgeInsets.symmetric(horizontal: 15.w
                       ),
                       child: customTextField(
+                        forgetPassController.emailController,
                         TextInputType.emailAddress,
                         context,
                         "Enter E-Mail",

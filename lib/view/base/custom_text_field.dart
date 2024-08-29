@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 Widget customTextField(
+  controller,
   keyboardtype,
   context,
   hinttext,
@@ -10,11 +11,13 @@ Widget customTextField(
   bool obscureText = false,
   prefixIcon,
   suffixIcon,
+  suffixIconOntap,
   readOnly = false,
 }) {
   return Padding(
     padding: const EdgeInsets.only(bottom: 10),
     child: TextFormField(
+      controller: controller,
       cursorColor: AppColors.primaryClr,
       keyboardType: keyboardtype,
       readOnly: readOnly,
@@ -44,10 +47,13 @@ Widget customTextField(
             bottom: 5.h,
             right: 10.w,
           ),
-          child: Icon(
-            suffixIcon,
-            color: AppColors.primaryClr,
-            size: 28.sp,
+          child: InkWell(
+            onTap: suffixIconOntap,
+            child: Icon(
+              suffixIcon,
+              color: AppColors.primaryClr,
+              size: 28.sp,
+            ),
           ),
         ),
         enabledBorder: OutlineInputBorder(
